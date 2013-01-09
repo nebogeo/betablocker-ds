@@ -1,7 +1,7 @@
 B E T A B L O C K E R (C) 2010 Dave Griffiths 
 ---------------------------------------------
 
-Betablocker is a 8 bit processor with 256 bytes of memory. It's capable only of playing music, and it's threads of execution (which share the same memory) never crash or cease execution.
+Betablocker is a 8 bit processor with 256 bytes of memory. It's capable only of playing music, and it's threads of execution (which share the same memory) never crash or cease execution, but can halt in endless loops.
 
 You write into memory in order to edit programs literally as they are running.
 
