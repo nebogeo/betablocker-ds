@@ -1,0 +1,36 @@
+B E T A B L O C K E R (C) 2010 Dave Griffiths 
+---------------------------------------------
+
+Betablocker is a 8 bit processor with 256 bytes of memory. It's capable only of playing music, and it's threads of execution (which share the same memory) never crash or cease execution.
+
+You write into memory in order to edit programs literally as they are running.
+
+Instruction Set
+
+Instr Oper Push Pop  Description
+----------------------------------------------------------------------------
+NOP   0    0    0    Does nothing
+ORG   0    0    0    Program start
+EQU   0    1    2    Push 1 if top 2 items in stack are equal, otherwise 0
+JMP   1    0    0    Sets program counter
+JMP   1    0    0    If top is 0, sets program counter
+PSHL  1    1    0    Pushes literal to stack
+PSH   1    1    0    Pushes value at this address
+PSHI  1    1    0    Indirect push address at address
+POP   1    0    1    Pop stack to address
+POPI  1    0    1    Indrect pop stack to address at address
+ADD   0    1    2    Adds top 2 items and pushes result
+SUB   0    1    2    Subtracts top 2 items and pushes result
+INC   0    1    1    Increments top of stack
+DEC   0    1    1    Decrements top of stack
+AND   0    1    2    Pushes bitwise AND of top two stack items
+OR    0    1    2    Pushes bitwise OR of top two stack items
+XOR   0    1    2    Pushes bitwise XOR of top two stack items
+NOT   0    1    1    Pushes bitwise NOT of tow stack item
+ROR   1    1    1    Bitwise right rotate top of stack 
+ROL   1    1    1    Bitwise left rotate top of stack
+PIP   1    0    0    Increments addr in-place (push increment pop)
+PDP   1    0    0    Decrements addr in-place (push decrement pop)
+DUP   0    1    0    Duplicates top of stack
+NOTE  0    0    1    Plays current instrument at pitch from top of stack
+VOX   0    0    1    Changes current instrument to top of stack
